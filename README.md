@@ -1,7 +1,7 @@
 # CS665 PROJECT 1
 # Warehouse Management System
 # Contributors
-Ramya Majjigapu
+Ramya Majjigapu\n
 Shashank Gaddamidi
 Sai Prakyath Goli
 Anirudh Devraj
