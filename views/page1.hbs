@@ -1,0 +1,122 @@
+<head>
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 5px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border:1px solid #ccc;
+  border-radius: 12px;
+
+}
+
+button ,input[type="submit"]{
+  background-color: #878c0aa9;
+  color: white;
+  padding: 10px 100px;
+  margin: 8px 0;
+  border-radius:12px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius:100%;
+}
+
+.container {
+  padding: 0px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 0px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+.container{
+  background-color:#f1f1f1";
+
+}
+tr,td,th {
+    border:1px solid rgb(57, 47, 47);
+    font-display: center;
+    width: 50px;height: 20px;
+  }
+  h2{
+    color:#cf1916a9;
+  }
+  h3{
+    color:#cf1916a9;
+  }
+  
+  </style>
+
+</head>
+<center>
+
+<h2>Warehouse Management System</h2>
+<h3>Current Orders</h3>
+<table>
+  <thead>
+    <tr>
+      <th>ProductId</th>
+      <th>agentId</th>
+      <th>productName</th>
+      <th>agentName</th>
+      <th>price</th>
+      <th>manfactureDate</th>
+      <th>rating</th>
+      <th>address</th>
+       </tr>
+  </thead>
+  <tbody>
+{{#each rows}}
+    <tr>
+      <td>{{this.productid}}</td>
+      <td>{{this.agentid}}</td>
+      <td>{{this.product_name}}</td>
+      <td>{{this.agent_name}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.manfactured_date}}</td>
+      <td>{{this.rating}}</td>
+      <td>{{this.address}}</td>
+        <form action="/addCart/"  method="post">
+        <input type=hidden name="productid" value={{this.productid}}>
+        <input type=hidden name="agentid" value={{this.agentid}}>
+        <input type=hidden name="productname" value={{this.product_name}}>
+        <input type=hidden name="customerid" value={{this.customerid}}>
+      <td><a href="#" target="_blank"><button class="addbtn">Add to Cart</button></a></td>
+      </form>
+        </tr>
+{{/each}}
+  </tbody>
+</table>
+</center>
